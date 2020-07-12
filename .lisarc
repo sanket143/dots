@@ -1,0 +1,29 @@
+#!/sbin/bash
+
+lisa() {
+  if [ $# -gt 0 ]; then
+    if [ "$1" == "remote" ]; then
+      cd ~/Remote
+    elif [ "$1" == "lite" ]; then
+      cd ~/Lite
+    elif [ "$1" == "verts" ]; then
+      cd ~/Verts
+    elif [ "$1" == "record" ]; then
+      ffmpeg -f x11grab -s 1366x768 -r 25 -i :0.0 ~/Videos/Recordings/$(date +'Screen-%Y%m%d%H%M%S.mp4')
+    elif [ "$1" == "videos" ]; then
+      cd ~/Videos
+    elif [ "$1" == "music" ]; then
+      cd ~/Music
+    elif [ "$1" == "docs" ]; then
+      cd ~/Documents
+    elif [ "$1" == "downloads" ]; then
+      cd ~/Downloads
+    elif [ "$1" == "source" ]; then
+      source ~/.bashrc
+    else
+      echo "What's $1?"
+    fi
+  else
+    echo "Hello, it's me Lisa"
+  fi
+}
