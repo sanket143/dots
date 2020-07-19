@@ -18,6 +18,17 @@ lisa() {
       cd ~/Documents
     elif [ "$1" == "downloads" ]; then
       cd ~/Downloads
+    elif [ "$1" == "theme" ]; then
+      if [ "$2" == "light" ]; then
+        feh --bg-fill ~/Pictures/the_vamps_wallpaper.png
+        xrdb ~/.Xbackup2
+      elif [ "$2" == "dark" ]; then
+        feh --bg-fill ~/Pictures/.wallpaper.jpg
+        xrdb ~/.Xresources
+      else
+        echo "Which theme is '$2'"
+        echo "Choose from these 'light' and 'dark'"
+      fi
     elif [ "$1" == "source" ]; then
       source ~/.bashrc
     else
