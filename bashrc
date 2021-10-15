@@ -60,9 +60,6 @@ export GOPATH="$HOME/Remote/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
 
-# GH PAT
-export GH_PAT="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"
-
 # TTChat
 export PATH="$PATH:~/Remote/community/ttchat/bin"
 
