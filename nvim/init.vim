@@ -57,7 +57,7 @@ autocmd BufReadPost *
 " Theme START
 syntax on
 set termguicolors
-set background=light
+set background=dark
 set cursorline
 set hidden
 set cmdheight=1
