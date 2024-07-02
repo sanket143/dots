@@ -1,0 +1,23 @@
+#TabsToolbar {
+  visibility: collapse;
+}
+
+#sidebar-header {
+  visibility: collapse !important;
+}
+
+@-moz-document url(chrome://browser/content/browser.xul),
+               url(chrome://browser/content/browser.xhtml)
+{
+  #urlbar-background {
+    background-color: white !important;
+    border: none !important;
+    outline: none !important;
+  }
+}
+
+.sidebar-splitter {
+  width: 1px !important;
+  background: #eee !important;
+  border: none !important;
+}
