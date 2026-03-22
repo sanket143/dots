@@ -1,0 +1,47 @@
+# theme="catppuccin_mocha"
+# theme="flatwhite"
+# theme="github_light"
+# theme="ayu_evolve"
+# theme="adwaita-dark"
+# theme="zenburn"
+# theme="base16_transparent"
+# theme="base16_default"
+# theme="default"
+# theme="material_deep_ocean"
+# theme="amberwood"
+# theme="base16_terminal"
+# theme="dracula_at_night"
+# theme="ao"
+# theme="autumn_night"
+# theme="dark_high_contrast"
+# theme="dark_plus"
+# theme="carbon"
+# theme="starlight"
+# theme="mellow"
+# theme="nightfox"
+# theme="cyan_light"
+# theme="ashokai_evermoor"
+theme="bogster"
+# theme="acid"
+
+[editor]
+line-number="relative"
+idle-timeout = 0
+clipboard-provider = "pasteboard"
+
+[keys.insert]
+"A-m" = "normal_mode"
+"A-v" = "paste_clipboard_before"
+
+[keys.select]
+"A-v" = ":clipboard-paste-replace"
+
+[keys.normal]
+"A-v" = ":clipboard-paste-after"
+
+[keys.normal.g]
+i = ":echo %sh{gh browse '%{buffer_name}:%{cursor_line}' -c}"
+b = ":noop %sh{gh browse '%{buffer_name}:%{cursor_line}' -c}"
+
+[keys.normal.space]
+B = ":sh blame %{buffer_name} %{cursor_line}" # Show blame information
