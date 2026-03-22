@@ -1,0 +1,92 @@
+[language-server.eslint]
+args = ["--stdio"]
+command = "vscode-eslint-language-server"
+
+[language-server.eslint.config]
+validate = "on"
+experimental = { useFlatConfig = false }
+rulesCustomizations = []
+run = "onType"
+problems = { shortenToSingleLine = false }
+nodePath = ""
+workingDirectory = { mode = "location", directory = "$CWD" }
+
+[language-server.eslint.config.codeAction]
+[language-server.eslint.config.codeAction.disableRuleComment]
+enable = true
+location = "separateLine"
+
+[language-server.eslint.config.codeAction.showDocumentation]
+enable = true
+
+[language-server.eslint.config.codeActionOnSave]
+enable = true
+mode = "fixAll"
+
+[language-server.typescript-language-server.config]
+documentFormatting = false
+
+[[language]]
+name = "html"
+formatter = { command = "npx", args = ["prettier", "--parser", "html"] }
+auto-format = false
+
+[[language]]
+name = "json"
+formatter = { command = "npx", args = ["prettier", "--parser", "json"] }
+
+[[language]]
+name = "css"
+formatter = { command = "npx", args = ["prettier", "--parser", "css"] }
+auto-format = false
+
+[[language]]
+name = "javascript"
+formatter = { command = "npx", args = ["prettier", "--parser", "typescript"] }
+language-servers = [{ name = "typescript-language-server", except-features = [ "format" ] }, "eslint"]
+auto-format = true
+
+# [language-server.local-tsserver]
+# args = ["/Users/sanket143/Remote/community/TypeScript/built/local/tsserver.js", "--stdio"] # should come by def with helix
+# command = "node"
+
+# [[language]]
+# name = "javascript"
+# # formatter = { command = "npx", args = ["prettier", "--parser", "typescript"] }
+# language-servers = ["local-tsserver"]
+# auto-format = true
+
+[[language]]
+name = "typescript"
+formatter = { command = "npx", args = ["prettier", "--parser", "typescript"] }
+# language-servers = [{ name = "typescript-language-server", except-features = [ "format" ] }, "eslint"]
+language-servers = [{ name = "typescript-language-server", except-features = [ "format" ] } ]
+auto-format = true
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[[language]]
+name = "lua"
+auto-format = true
+
+[language-server.lua-language-server.config.Lua]
+diagnostics = { globals = ["love"] }
+
+# Deno
+# [[language]]
+# name = "typescript"
+# roots = ["deno.json", "deno.jsonc", "package.json"]
+# auto-format = true
+# language-servers = ["deno-lsp"]
+
+# [[language]]
+# name = "javascript"
+# roots = ["deno.json", "deno.jsonc", "package.json"]
+# auto-format = true
+# language-servers = ["deno-lsp"]
+
+# [language-server.deno-lsp]
+# command = "deno"
+# args = ["lsp"]
+# config.deno.enable = true
